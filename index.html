@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">	
+    <title>ManyamaT</title>
+	<link rel="stylesheet" href="style.css">
+	<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+
+	
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+	background-color: #ccc;
+}
+
+#header {
+    background-color: #f1f1f1;
+    padding: 5px;
+    color: darkcyan;
+    text-align: center;
+}
+
+
+.container {
+  padding: 20px 10%;
+  padding-bottom: 100px;
+}
+
+
+#home {
+    background-image: url(back15.jpg);
+	background-repeat: no-repeat;
+	background-size: cover; 
+}
+       
+
+.logo {
+    float: left;
+    font-size: 15px;
+    color: white;
+    text-decoration: none;
+    margin-top: 30px;
+}
+.logo img {
+    height: 50px;
+    width: 50px;
+}
+
+.topnav {
+    background-color: #f1f1f1;
+    background-image: url(back12.jpg);
+    background-size: cover;
+    background-position: center;
+    list-style-type: none;
+    text-align: center;
+    padding: 40px;
+    margin: 0;
+    font-size: 20px;
+}
+
+.topnav a {
+    color: white;
+    text-align: center;
+    padding: 15px;
+	margin: -2px;
+    text-decoration: none;
+}
+.topnav li {
+    display: inline-block;
+    padding: 0;
+}
+.topnav a:hover {
+    background-color: #ccc;
+    color: #000000;
+}
+
+
+/**-----Dropdown-----*/
+li a, .dropbtn {
+  display: inline-block;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+}
+li.dropdown {
+    display: inline-block;
+}
+.dropdon-content {
+  display: none;
+  position: absolute;
+  background-color:dimgray;
+}
+.dropdon-content a {
+  display: block;
+  color: white;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+.dropdon-content a:hover {
+    background-color: #ccc;
+}
+.dropdown:hover .dropdon-content {
+    display: block;
+}
+
+.header-text {
+    margin-top: 10%;
+    font-size: 40px;
+    text-align: right;
+}
+.header-text h1 {
+    font-size: 75px;
+    margin-top: 20px;
+    color: #800000;
+}
+.header-text h1,
+.header-text h2 {
+    display: inline;
+}
+
+.artist {
+    flex: 1;
+    margin: 0 10px;
+    position: absolute;
+    top: 25%;
+    left: 0;
+    margin-top: 70px; /* Adjust margin-top as needed */
+    margin-left: 80px; /* Adjust margin-left as needed */
+}
+
+.social-icon {
+  margin-top: 20px;
+}
+
+.social-icon a {
+  text-decoration: none;
+  font-size: 50px;
+  margin-right: 5px;
+  color: #ababab;
+  display: inline-block;
+  transition: transform 0.5s;
+}
+
+.social-icon a:hover {
+  color: darkcyan;
+  transform: translateY(-5px);
+}
+
+/*----introduction----*/
+#introduction {
+    background-image: url(back24.jpeg);
+	background-repeat: no-repeat;
+	background-size: cover;
+    color: white;
+}
+
+table {
+  border-colapse: collapse;
+  width:100%;
+    font-family: 'poppins',sans-serif; 
+}
+th,td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 2px solid #36454F;
+ }
+tr:hover {
+  background-color: #36454F;
+}  
+
+.download:link, .download:visited {
+   background-color: #36454F;
+   color: white;
+   padding: 14px 25px;
+   text-align: center;
+   text-decoration: none;
+   display: inline-block;
+}
+.download:hover, download:active {
+  background-color: darkcyan;
+ }
+
+.heading {
+  font-family:helvetica;
+  font-size: 40px;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 20px;
+}
+
+
+/* ---- My Skills ---*/
+
+#skills {
+    background-image: url(back4.jpeg);
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+ .container .box-container{
+    display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+	gap: 15px;
+	justify-content: center;
+}
+ .container .box-container .box{
+	border-radius: 15px;
+	background: #fff; 
+	text-align: center;
+	padding: 20px;
+}
+
+.container .box-container .box:hover{
+    box-shadow: 5px 10px 10px #ccc;
+	transform: scale(1.04);
+}	
+
+
+
+/* ---- My Services ----*/
+#services {
+    background-image: url(back3.jpg); 
+	background-repeat: no-repeat;
+	background-size: cover;
+    background-color: #ccc;
+    color: white;
+    padding: 20px;
+  
+}
+
+.services-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-gap: 40px;
+  margin-top: 20px;
+}
+
+.services-list div {
+  background-color: #262626;
+  padding: 40px;
+  font-size: 13px;
+  font-weight: 300;
+  border-radius: 10px;
+  transition: background 0.5s, trasform 0.5s;
+}
+
+.services-list div h2 {
+  font-size: 30px;
+  font-weight: 5000;
+  margin-bottom: 15px;
+}
+
+.services-list div:hover {
+  color: white;
+  background-color: #008B8B;
+  transform: translatey(-10px);
+}
+
+
+
+/*----contact---*/
+#contact {
+    background-image: url(back15.jpg);
+	background-repeat: no-repeat;
+    background-size: cover;
+    padding: 0 5%;
+    padding-bottom: 0;
+	width: 100%;
+	height: 100%;
+	min-height: 100vh;
+	display: grid;
+	grid-template-columns: repeat(2, 2fr);
+	grid-gap: 6rem;
+	align-items: center;
+}
+
+.contact-img img {
+    padding: 60px;
+	margin: -10px;
+    max-width: 100%;
+	width: 100%;
+	height: auto;
+	border-radius: 20px;
+}
+
+
+.contact-form p {
+   color: white;
+   letter-spacing: 2px;
+   font-size: 1.2rem;
+}
+.contact-form form {
+   position: relative;
+}
+.contact-form form input, form textarea {
+   width: 100%;
+   padding: 10px;
+   border: none;
+   outline: none;
+   color: white;
+   background: dimgray;
+   margin-bottom:0.7rem;
+   border-radius: 10px;
+}
+.contact-form textarea {
+   resize: none;
+   height: 150px;
+}
+.contact-form form .btn {
+   display: inline-block;
+   background: #36454F;
+   font-size: 1.0rem;
+   width: 100px;
+   cursor: pointer;
+}
+
+.contact-form form .btn:hover {
+    background-color: darkcyan;
+}
+
+::placeholder {
+     color: white;
+}
+
+@media (max-width: 1570px){
+   #contact {
+      padding: 20px 5%;
+	  transition: .2s;
+}
+.contact-form h1 {
+   font-size: 60px;
+}
+.contact-form p {
+   margin-bottom: 3rem;
+}
+}
+
+
+@media (max-width: 1090px) {
+    #contact {
+	   grid-gap: 2rem;
+	   transition: 3s;
+}
+}
+
+
+@media (max-width: 1000px) {
+    #contact {
+       grid-template-columns: 1fr;
+}
+    .contact-form {
+	    order: 2;
+}
+.contact-img img {
+    padding-top: 0;
+    max-width: 100%;
+	width: 100%
+	height: 100%;
+	text-align: center;
+}
+}
+
+
+footer {
+    padding: 2em;
+    color: white;
+    background-color: #000000;
+    clear: left;
+    text-align: center;
+	font-family:Georgia, serif;
+}
+	
+
+
+/*-------CSS3 for responsive design -------*/
+@media only screen and (max-width: 800px) {
+ #header {
+	display: none;
+  }
+  * {
+    font-size: 16px;
+  }
+  
+  .topnav {
+    display: none;
+    padding: 10px;
+   }
+   
+ #home {
+    background-image: url(back5.jpeg);
+	background-repeat: no-repeat;
+	background-size: cover; 
+}
+  .header-text {
+    margin-top: 50%;
+  }
+  .heading {
+    font-size: 26px;
+    }
+   .photo {
+      display: none;
+	  font-size: 6px;
+	}
+	
+  .header-text h2 {
+    color: #ccc; 
+    font-size: 50px;
+  }
+  .header-text h1, {
+    font-size: 50px;
+  }
+
+ .container .box-container{
+    display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+	gap: 40px;
+	justify-content: center;
+}
+ .container .box-container .box {
+	text-align: center;
+	padding: 0;
+}
+
+ .img {
+    background-image: url(back18.jpg);
+	background-repeat: no-repeat;
+    background-size: cover;
+	color: white;
+}
+
+}
+
+</style>
+
+<script>
+//Contact script
+var tablinks = document.getElementsByClassName("tab-links");
+var tabcontents = document.getElementsByClassName("tab-contents");
+function opentab(tabname){
+    for (tablink of tablinks){
+        tablink.classList.remove("active-link")
+    }
+    for (tabcontent of tabcontents){
+        tabcontent.classList.remove("active-tab")
+    }
+    event.currentTarget.classList.add("active-link")
+    document.getElementById(tabname).classList.add("active-tab")
+}
+
+
+//slidemenu script
+var slidemenu=document.getElementById("slidemenu")
+
+function openmenu(){
+    slidemenu.style.right="0";
+}
+function closemenu(){
+    slidemenu.style.right="-200px";
+}
+</script>
+
+<body>
+  <!--Header--> 
+  <div id="header">
+    <marquee behavior="sliding" direction="left" scrollamount="4";><h1>TM Portfolio</h1></marquee>
+  <a href="#" class="logo"><img src="logo.png" alt="Logo">TM</a>
+</div>
+
+
+<!-----Navigation Bar ----->
+<nav>
+<div class="topnav">
+  <li><a href="#">Home</a></li>
+  <li><a href="#introduction">Introduction</a></li>
+  <li><a href="#skills">Skills</a><li>
+  <li><a href="#services">Services</a></li>
+      <li class="dropdown">
+       <a href="javascript:void(0)" class="dropbtn">Projects</a>
+    <div class="dropdon-content">
+       <a href="#">Project1</a>
+	   <a href="#">Project2</a>
+	   <a href="#">Project3</a>
+	   <a href="#">Project4</a>
+	   <a href="#">Project5</a>
+	</div>
+    <li><a href="#contact">Contacts</a></li>
+</nav>  
+</div>
+
+
+
+<!--HomePage-->
+<div id="home">
+    <div class="container">
+        <h2 style="text-shadow:2px 2px 5px maroon, 2px 2px 6px white, 2px 1px 2px red; color:black; text-align:right; font-size:27px;">
+        I INVITE YOU TO EXPLORE MY PORTFOLIO!
+    </h2>
+<div class="header-text">
+        <p style="color: #ccc;">&#128512; Hello, I'm</p>
+        <h1>T.</h1>
+        <h2>Manyama</h2>
+<div class="social-icon">
+    <a href="https://www.facebook.com/themba.manyama.94" title="Meta" target="_blank;"><i class='bx bxl-facebook-square'></i><a>
+    <a href="https://www.linkedin.com/in/themba-manyama-97b286147/" title="LinkedIn" target="_blank;"><i class='bx bxl-linkedin-square' ></i></a>
+    <a href="#"><i class='bx bxl-github' title="Github" target="_blank;"></i></a>
+    <a href="https://www.whatsapp.com/" title="WhatsApp" target="_blank;"><i class='bx bxl-whatsapp-square' ></i></a>
+        </div>  	
+    </div>
+  </div>
+  </div>
+
+
+
+<!--Introduction-->
+   <div id="introduction">
+      <div class="container">
+	      <h1 class="heading">Introduction</h1>
+            <p class="intro"><div style="background-color:#36454F;color:white;padding:20px;">
+<p class="photo"><img src="back20.jpeg" alt="photo" style="width:250px;height:150px;margin-left:5px;float:right;"></p>			
+&#128075 Hello, Themba Manyama here. I'm a recent graduate with a <b><i><span style="color:#ccc;">Bachelor Of Commerce In Information Systems</b>
+</i></span> from the University of North West And i'm currently based in Boksburg. I have developed strong foundamentals in both business and technology.
+<br><br> I am currently looking for the opportunity to kickstart my career in the exciting field of Information Technology/Systems. I am certain that I can
+apply the knowledge I have gained from  my degree to real-world situations. With my academic background and real-world experience, I am ready to dive into
+real-world projects, collaborative with talented teams, and help bring innovation digital ideas to life. &#127757<br><br> A presentation of my basic work,
+abilities, and experience may be seen in this portfolio. This Portfolio is my space where i will be showing my skills and projects. And i will be updating
+it as i continue to grow and learn. Polishing the skills i have to develop new ones. I am confident that i can contribute effectively to a team. I am
+actively applying for an internship/Entry-job level and ready to start right away.&#128187<b>Thank You.</b></div></p>
+    <br><br>
+        <table style ="width:100%; padding: 10px; font-weight: bold;">
+        <caption><span style="float:left;font-size:20px;color:white;"> MY ACADEMIC ACHIEVEMENT </caption></span>
+  <tr>
+    <th>School Name</th>
+    <th>Qualification</td>
+    <th>Dates</td>
+  </tr>
+  <tr>
+    <td>Kgapane High School</th>
+    <td>Matric / Grade 12</td>
+    <td>2016</td>
+  </tr>
+  <tr>
+    <td>North West University</th>
+    <td>BCOM In Information Systems</td>
+    <td>2018-2023</td>
+  </tr>
+</table>
+    </br>
+		<a href="CV.G.pdf" target="_blank" class="download">Resume.pdf</a>
+	</div>
+	   </div>
+
+
+
+<!--My Skills-->
+   <div id="skills">
+      <div class="container">
+           <h1 class="heading">My Skills</h1>
+                <div class="box-container">
+
+<div class="box">
+    <img src="website.jpeg" alt="jpeg" width="100" height="100">
+</div>
+
+
+<div class="box">
+    <img src="b5.jpeg" alt="picture" width="100" height="100">
+</div>
+
+<div class="box">
+    <img src="java.png" alt="web" width="100" height="100">
+</div>
+
+<div class="box">
+    <img src="php.png" alt="logo" width="100" height="100">
+</div>
+
+<div class="box">
+    <img src="cplus.png" alt="logo" width="100" height="100">
+</div>
+
+<div class="box">
+    <img src="cprog.jpeg" alt="jpeg" width="100" height="100">
+</div>
+
+<div class="box">
+    <img src="mysql.png" alt="png" width="100" height="100">
+</div>
+
+<div class="box">
+    <img src="github.png" alt="png" width="100" height="100">
+</div>
+
+<div class="box">
+    <img src="python.jpeg" alt="png" width="100" height="100">
+</div>
+
+<div class="box">
+    <img src="netbeans.png" alt="png" width="100" height="100">
+</div>
+
+<div class="box">
+    <img src="office.jpeg" alt="jpeg" width="100" height="100">
+</div>
+
+<div class="box">
+    <img src="visualstudio.jpeg" alt="jpeg" width="100" height="100">
+</div>
+
+
+     </div>
+   </div>
+		  
+  </div>
+</div>		  
+
+
+<!--Services-->
+<div id="services">
+    <div class="container">
+      <h1 class="heading">My Services</h1>
+      <div class="services-list">
+        <div>
+          <h2>Front-End Developer</h2>
+          <p>I'm a Front-End Web Developer with a passion for building intuative and virtually appealing websites.<br><br> I strongly
+		  understand HTML5, CSS3, JavaScript, Bootsrap5, Angular and Github. And i am always looking to learn and improve
+		  my skills.<br><br>I've got deep passion for creating responsive, interactive websites. My goal? To grow as a full-stack 
+		  developer.</p>
+        </div>
+        <div>
+          <i class="fa-brands fa-python"></i>
+          <h2>Junior Programmer</h2>
+          <p>As a Junior Programmer, I've honed my foundamentals in high level programming languages such as C#, .Net, Asp.Net and Java.  
+          <br><br>I'm knowledgeable in building applications using object-oriented programming principles.<br><br>Understanding of Software
+		  Development principles and methodologies including AGILE.</p>
+        </div>
+        <div>
+          <i class="fa-solid fa-database"></i>
+          <h2>Data And Analytics</h2>
+          <p>Strong basics in queries, retrieving data from databases and good understanding of relational databases such as mySQL and MongoDB
+		     <br><br>Understanding of business Analytics concepts and applying them to IT solutions. </p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+
+  <!--Contact-->
+  <div id="contact">
+    <div class="container">
+	  <h1 class="heading">Contacts</h1>
+	    <div class="contact-form">	  
+           
+            <p><i class='bx bxl-whatsapp' style="color: dimgray; text-align: center; font-size: 25px;"></i>WhatsApp Line: +27 (0) 79-777-0542<br>
+            <i class='bx bxs-envelope' style="color: dimgray; text-align: center; font-size: 25px;"></i>Email Address: manyamatom@gmail.com<br>
+            <i class='bx bx-current-location' style="color: dimgray; text-align: center; font-size: 25px;"></i>Address: Villa Lisa Ext 2, Boksburg 1459<br></p>
+			
+			<form action="holder">
+			  <input type="text" placeholder="Enter Your Name" required>
+			  <input type="text" placeholder="Enter Your Email" required>
+              <textarea name="" id="" cols="30" rows="10" placeholder="Write Message" required></textarea>
+			  <input type="submit" name="" value="submit" class="btn">
+			</form>   
+		</div>
+	</div>
+    <div class="contact-img">
+        <img src="Photo.jpg">
+  </div>
+</div>
+
+
+<footer>
+<br>
+    <p>2024 Copyright ©Code by Themba Manyama. <i>All rights reserved.</i></p>
+</br>
+<hr style="margin: 10px 0;">
+</footer>
+</body>
+
+</html>
