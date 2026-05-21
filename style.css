@@ -22,17 +22,17 @@ body {
 
 
 .container {
-  padding: 20px 10%;
+  padding: 10px 10%;
   padding-bottom: 100px;
 }
 
 
 #home {
     width: 100%;
-    height: 100vh;
-    background-image: url(back15.jpg);
-	background-repeat: no-repeat;
-	background-size: cover; 
+    height: 65vh;
+    background-color: ;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
        
 
@@ -55,7 +55,7 @@ body {
 }
 .topnav li {
     display: inline-block;
-    padding: 0;
+    padding: 7px;
 }
 
 .topnav a:hover {
@@ -119,13 +119,13 @@ body {
 }
 
 .invite {
-    text-shadow:2px 2px 5px maroon, 2px 2px 6px white, 2px 1px 2px red;
-    color:black; 
-	text-align:right;
-	font-size: 27px;
+    text-shadow: none;
+    color: darkcyan; 
+    text-align:right;
+    font-size: 28px;
 }
 .greet {
-   color: #ccc;
+   color: black;
    font-size: 25px;
 }
 
@@ -154,7 +154,7 @@ body {
   text-decoration: none;
   font-size: 0;
   margin-right: 5px;
-  color: #ababab;
+  color: slategrey;
   display: inline-block;
   transition: transform 0.4s;
 }
@@ -174,13 +174,101 @@ body {
     margin-left: 80px; /* Adjust margin-left as needed */
 }
 
+/* Chatbot button - only for Home */
+#open-chatbot {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    background-color: #008B8B;
+    color: white;
+    border: none;
+    border-radius: 40%;
+    padding: 15px;
+    font-size: 20px;
+    cursor: pointer;
+    z-index: 1000;
+    animation: bounce 2s infinite;
+}
+
+/* Chatbot window - animated */
+#chatbot {
+    display: none;
+    position: fixed;
+    bottom: 80px;
+    left: 20px;
+    width: 300px;
+    max-height: 400px;
+    background-color: #222;
+    border-radius: 15px;
+    color: white;
+    font-family: Arial, sans-serif;
+    box-shadow: 0 0 20px rgba(0,0,0,0.5);
+    z-index: 1000;
+    flex-direction: column;
+    transform: translateX(-50px);
+    opacity: 0;
+    transition: all 0.5s ease;
+}
+
+#chatbot.show {
+    display: flex;
+    transform: translateX(0);
+    opacity: 1;
+}
+
+#chatbot-header {
+    padding: 10px;
+    background-color: #008B8B;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+#close-chatbot { 
+    cursor: pointer;
+	font-size: 20px;
+}
+
+#chatbot-messages {
+    padding: 10px; 
+	height: 250px;
+	overflow-y: auto; border-bottom: 1px solid #444; 
+}
+
+#chatbot-input { 
+    width: calc(100% - 60px);
+	padding: 10px; 
+	border: none; 
+	border-radius: 0 0 0 15px; 
+	outline: none; 
+}
+
+#chatbot-send { 
+    width: 60px; 
+	background-color: #008B8B; 
+	color: white; 
+	border: none; 
+	cursor: pointer; 
+	border-radius: 0 0 15px 0; 
+}
+
+/* Animation for bounce */
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+    40% { transform: translateY(-15px); }
+    60% { transform: translateY(-5px); }
+}
+
+
 /*---- Introduction ----*/
 #introduction {
-    background-image: url('back24.jpeg');
+    background-color: whitesmoke;
     background-repeat: no-repeat;
     background-size: cover;
     color: white;
-    padding: 50px 0;
+	padding-bottom: 0;
 }
 
 .intro-box {
@@ -247,7 +335,7 @@ tr:hover {
 caption {
     font-size: 18px;
     font-weight: bold;
-    color: white;
+    color: #36454F;
     text-align: left;
     margin-bottom: 10px;
 }
@@ -256,14 +344,14 @@ caption {
   font-family:helvetica;
   font-size: 40px;
   font-weight: 700;
-  color: white;
+  color: #36454F;
   margin-bottom: 20px;
 }
 
 
 /* ---- My Skills ---*/
 #skills {
-    background-image: url(back4.jpeg);
+    background-color: #ccc;
 	background-repeat: no-repeat;
 	background-size: cover;
 }
@@ -289,11 +377,10 @@ caption {
 
 
 /* ---- My Services ----*/
-#services {
-    background-image: url(back3.jpg); 
+#services { 
 	background-repeat: no-repeat;
 	background-size: cover;
-    background-color: #ccc;
+    background-color: white;
     color: white;
     padding: 20px
   
@@ -329,7 +416,6 @@ caption {
 
 /*----contact---*/
 #contact {
-    background-image: url(back15.jpg);
 	background-repeat: no-repeat;
     background-size: cover;
     padding: 0 5%;
@@ -375,16 +461,30 @@ caption {
    resize: none;
    height: 150px;
 }
-.contact-form form .btn {
-   display: inline-block;
-   background: #36454F;
-   font-size: 1.0rem;
-   width: 100px;
-   cursor: pointer;
+
+/* Contact Form Send Button */
+.contact-form .btn {
+    background-color: darkcyan;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
 }
 
-.contact-form form .btn:hover {
-    background-color: darkcyan;
+.contact-form .btn:hover {
+    background-color: #00b3b3;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+
+.contact-form .btn:active {
+    transform: translateY(1px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
 }
 
 ::placeholder {
@@ -516,6 +616,17 @@ footer {
     font-size: 30px;
 }
 
+.header-text h2 { 
+    font-size: 45px;
+    text-align: bottom-right;
+	color: #ccc;
+}
+
+.header-text h1 {
+    font-size: 50px;
+    text-align: bottom-right;
+ }
+ 
 .container {
     padding: 15px;
 }
@@ -581,31 +692,28 @@ th, td {
 }
  .header-text {
     margin-top: 70%;
-    font-size: 35px;
+    font-size: 10px;
     text-align: bottom-right;
  }
 
 .header-text h1 {
-    font-size: 50px;
+    font-size: 45px;
     text-align: bottom-right;
  }
 
 .header-text h2 { 
-    font-size: 40px;
+    font-size: 35px;
     text-align: bottom-right;
 	color: #ccc;
  }
 
 .invite {
-    text-shadow: none;
-    text-weight: 600;
-    color: maroon; 
-    text-align: center;
-    font-size: 25px;
+    display: none;
  }
 .greet { 
+    display: none;
     font-size: 25px;
-	color: white;
+	color: black;
 }
 
 
@@ -621,7 +729,8 @@ th, td {
     width: 150px;
 	height: 150px;
     }
+	
 #header {
-	display: none;
+   display: none;
+  }
  }
-}
