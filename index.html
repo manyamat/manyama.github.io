@@ -34,17 +34,17 @@ body {
 
 
 .container {
-  padding: 20px 10%;
+  padding: 10px 10%;
   padding-bottom: 100px;
 }
 
 
 #home {
     width: 100%;
-    height: 100vh;
-    background-image: url(back15.jpg);
+    height: 65vh;
+    background-color: ;
     background-repeat: no-repeat;
-    background-size: cover; 
+    background-size: cover;
 }
        
 
@@ -67,7 +67,7 @@ body {
 }
 .topnav li {
     display: inline-block;
-    padding: 0;
+    padding: 7px;
 }
 
 .topnav a:hover {
@@ -131,12 +131,13 @@ body {
 }
 
 .invite {
-    color:black; 
+    text-shadow: none;
+    color: darkcyan; 
     text-align:right;
-    font-size: 27px;
+    font-size: 28px;
 }
 .greet {
-   color: #ccc;
+   color: black;
    font-size: 25px;
 }
 
@@ -165,7 +166,7 @@ body {
   text-decoration: none;
   font-size: 0;
   margin-right: 5px;
-  color: #ababab;
+  color: slategrey;
   display: inline-block;
   transition: transform 0.4s;
 }
@@ -185,13 +186,101 @@ body {
     margin-left: 80px; /* Adjust margin-left as needed */
 }
 
+/* Chatbot button - only for Home */
+#open-chatbot {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    background-color: #008B8B;
+    color: white;
+    border: none;
+    border-radius: 40%;
+    padding: 15px;
+    font-size: 20px;
+    cursor: pointer;
+    z-index: 1000;
+    animation: bounce 2s infinite;
+}
+
+/* Chatbot window - animated */
+#chatbot {
+    display: none;
+    position: fixed;
+    bottom: 80px;
+    left: 20px;
+    width: 300px;
+    max-height: 400px;
+    background-color: #222;
+    border-radius: 15px;
+    color: white;
+    font-family: Arial, sans-serif;
+    box-shadow: 0 0 20px rgba(0,0,0,0.5);
+    z-index: 1000;
+    flex-direction: column;
+    transform: translateX(-50px);
+    opacity: 0;
+    transition: all 0.5s ease;
+}
+
+#chatbot.show {
+    display: flex;
+    transform: translateX(0);
+    opacity: 1;
+}
+
+#chatbot-header {
+    padding: 10px;
+    background-color: #008B8B;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+#close-chatbot { 
+    cursor: pointer;
+	font-size: 20px;
+}
+
+#chatbot-messages {
+    padding: 10px; 
+	height: 250px;
+	overflow-y: auto; border-bottom: 1px solid #444; 
+}
+
+#chatbot-input { 
+    width: calc(100% - 60px);
+	padding: 10px; 
+	border: none; 
+	border-radius: 0 0 0 15px; 
+	outline: none; 
+}
+
+#chatbot-send { 
+    width: 60px; 
+	background-color: #008B8B; 
+	color: white; 
+	border: none; 
+	cursor: pointer; 
+	border-radius: 0 0 15px 0; 
+}
+
+/* Animation for bounce */
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+    40% { transform: translateY(-15px); }
+    60% { transform: translateY(-5px); }
+}
+
+
 /*---- Introduction ----*/
 #introduction {
-    background-image: url('back24.jpeg');
+    background-color: whitesmoke;
     background-repeat: no-repeat;
     background-size: cover;
     color: white;
-    padding: 50px 0;
+	padding-bottom: 0;
 }
 
 .intro-box {
@@ -258,7 +347,7 @@ tr:hover {
 caption {
     font-size: 18px;
     font-weight: bold;
-    color: white;
+    color: #36454F;
     text-align: left;
     margin-bottom: 10px;
 }
@@ -267,14 +356,14 @@ caption {
   font-family:helvetica;
   font-size: 40px;
   font-weight: 700;
-  color: white;
+  color: #36454F;
   margin-bottom: 20px;
 }
 
 
 /* ---- My Skills ---*/
 #skills {
-    background-image: url(back4.jpeg);
+    background-color: #ccc;
 	background-repeat: no-repeat;
 	background-size: cover;
 }
@@ -300,11 +389,10 @@ caption {
 
 
 /* ---- My Services ----*/
-#services {
-    background-image: url(back3.jpg); 
+#services { 
 	background-repeat: no-repeat;
 	background-size: cover;
-    background-color: #ccc;
+    background-color: white;
     color: white;
     padding: 20px
   
@@ -340,7 +428,6 @@ caption {
 
 /*----contact---*/
 #contact {
-    background-image: url(back15.jpg);
 	background-repeat: no-repeat;
     background-size: cover;
     padding: 0 5%;
@@ -386,16 +473,30 @@ caption {
    resize: none;
    height: 150px;
 }
-.contact-form form .btn {
-   display: inline-block;
-   background: #36454F;
-   font-size: 1.0rem;
-   width: 100px;
-   cursor: pointer;
+
+/* Contact Form Send Button */
+.contact-form .btn {
+    background-color: darkcyan;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
 }
 
-.contact-form form .btn:hover {
-    background-color: darkcyan;
+.contact-form .btn:hover {
+    background-color: #00b3b3;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+
+.contact-form .btn:active {
+    transform: translateY(1px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
 }
 
 ::placeholder {
@@ -527,6 +628,17 @@ footer {
     font-size: 30px;
 }
 
+.header-text h2 { 
+    font-size: 45px;
+    text-align: bottom-right;
+	color: #ccc;
+}
+
+.header-text h1 {
+    font-size: 50px;
+    text-align: bottom-right;
+ }
+ 
 .container {
     padding: 15px;
 }
@@ -592,31 +704,28 @@ th, td {
 }
  .header-text {
     margin-top: 70%;
-    font-size: 35px;
+    font-size: 10px;
     text-align: bottom-right;
  }
 
 .header-text h1 {
-    font-size: 50px;
+    font-size: 45px;
     text-align: bottom-right;
  }
 
 .header-text h2 { 
-    font-size: 40px;
+    font-size: 35px;
     text-align: bottom-right;
 	color: #ccc;
  }
 
 .invite {
-    text-shadow: none;
-    text-weight: 600;
-    color: maroon; 
-    text-align: center;
-    font-size: 25px;
+    display: none;
  }
 .greet { 
+    display: none;
     font-size: 25px;
-	color: white;
+	color: black;
 }
 
 
@@ -648,14 +757,14 @@ th, td {
   </div>
 
     <nav class="topnav">
-        <p class="logo"><img src="tmlogo.jpeg" alt="Logo"></p>
+        <p class="logo"><img src="logo.png" alt="Logo"></p>
         <ul class="menu">
             <li><a href="#">Home</a></li>
             <li><a href="#introduction">Introduction</a></li>
             <li><a href="#skills">Skills</a></li>
             <li><a href="#services">Services</a></li>
             <li class="dropdown">
-                <a href="#">Projects ▾</a>
+                <a href="#">Projects â–¾</a>
                 <ul class="dropdown-content">
                     <li><a href="https://manyamat.github.io/LeanoWonderProperty/">Project 1</a></li>
 	                <li><a href="https://manyamat.github.io/esd/">Project 2</a></li>
@@ -682,10 +791,10 @@ th, td {
       <div class="header-text">
         <p class="greet">&#128512; Hello, I'm</p>
         <h1>T.</h1>
-        <h2>Manyama</h2>
+        <h2 span style="color:#36454F;">Manyama</h2></span>
         <div class="social-icon">
-                  <a href="https://m.youtube.com/channel/UCsH6kJTovXiTZ8hMUQ122Xw"><i class='bx bxl-youtube' title="YouTube" style="font-size: 40px;" target="_blank;"></i></a>
-		  <a href="https://www.facebook.com/"><i class='bx bxl-facebook-square' title="Facebook" style="font-size: 40px;" target="_blank;"></i></a>
+          <a href="https://m.youtube.com/channel/UCsH6kJTovXiTZ8hMUQ122Xw"><i class='bx bxl-youtube' title="YouTube" style="font-size: 40px;" target="_blank;"></i></a>
+		  <a href="https://www.facebook.com/profile.php?id=61583406740032"><i class='bx bxl-facebook-square' title="Facebook" style="font-size: 40px;" target="_blank;"></i></a>
 		  <a href="https://github.com/"><i class='bx bxl-github' title="Github" style="font-size: 40px;" target="_blank;"></i></a>
 		  <a href="https://www.linkedin.com/in/themba-manyama-97b286147/"><i class='bx bxl-linkedin-square' title="LinkedIn" style="font-size: 40px;" target="_blank;"></i></a>
 		  
@@ -695,32 +804,46 @@ th, td {
     </div>
   </div>
 
+
+    <!-- Chatbot HTML -->
+<div id="chatbot">
+  <div id="chatbot-header">
+    <h3>TM Assistant</h3>
+    <span id="close-chatbot">&times;</span>
+  </div>
+  <div id="chatbot-messages"></div>
+  <input type="text" id="chatbot-input" placeholder="Type your message...">
+  <button id="chatbot-send">Send</button>
+</div>
+<button id="open-chatbot">TM-Chat ??</button>  
+  
+  
     <!-- Introduction Section -->
     <div id="introduction">
         <div class="container">
             <h1 class="heading">Introduction</h1>
             <div class="intro-box">
                 <img src="back20.jpeg" alt="photo">
-                <p>👋 Hello, <b>Themba Manyama</b> here. I'm a recent graduate with a 
-                    <b><i><span style="color:#ccc;">Bachelor of Commerce in Information Systems</span></i></b> 
-                    from the University of North West, and I’m currently based in Boksburg. 
+                <p>ðŸ‘‹ Hello, <b>Themba Manyama</b> here. I hold
+                    <b><i><span style="color:darkcyan;">Bachelor of Commerce in Information Systems</span></i></b> 
+                    from the University of North West, and Iâ€™m currently based in Boksburg. 
                     I have developed strong fundamentals in both business and technology.
                 </p>
                 <br>
                 <p>I am currently looking for an opportunity to kickstart my career in the exciting field of Information Technology/Systems. 
                     I am eager to apply the knowledge I have gained from my degree to real-world situations. With my academic background and real-world 
-                    experience, I am ready to contribute to innovative projects, collaborate with talented teams, and bring digital ideas to life. 🌍
+                    experience, I am ready to contribute to innovative projects, collaborate with talented teams, and bring digital ideas to life. ðŸŒ
                 </p>
                 <br>
                 <p>This portfolio showcases my skills, projects, and experiences. It will be continuously updated as I grow and learn, refining my existing 
-                    skills and developing new ones. I am actively seeking an internship or entry-level job and ready to start immediately. 💻<br><br>
+                    skills and developing new ones. I am actively seeking an internship or entry-level job and ready to start immediately. ðŸ’»<br><br>
                     <b>Thank you!</b>
                 </p>
             </div>
 
             <!-- Academic Achievement Table -->
             <table>
-                <caption>🎓 MY ACADEMIC ACHIEVEMENT</caption>
+                <caption>ðŸŽ“ MY ACADEMIC ACHIEVEMENT</caption>
                 <tr>
                     <th>School Name</th>
                     <th>Qualification</th>
@@ -840,35 +963,33 @@ th, td {
   </div>
 
 
-
-  <!--Contact-->
-  <div id="contact">
-    <div class="container">
-	  <h1 class="heading">Contacts</h1>
-	    <div class="contact-form">	  
-           
-            <p><i class='bx bxl-whatsapp' style="color: dimgray; text-align: center; font-size: 25px;"></i>WhatsApp Line: +27 (0) 79-777-0542<br>
-            <i class='bx bxs-envelope' style="color: dimgray; text-align: center; font-size: 25px;"></i>Email Address: manyamatom@gmail.com<br>
-            <i class='bx bx-current-location' style="color: dimgray; text-align: center; font-size: 25px;"></i>Address: Villa Lisa Ext 2, Boksburg 1459<br></p>
-			
-			<form action="holder">
-			  <input type="text" placeholder="Enter Your Name" required>
-			  <input type="text" placeholder="Enter Your Email" required>
-              <textarea name="" id="" cols="30" rows="10" placeholder="Write Message" required></textarea>
-			  <input type="submit" name="" value="submit" class="btn">
-			</form>   
-		</div>
-	</div>
-    <div class="contact-img">
-        <img src="Photo.jpg">
+<!-- Contact Section -->
+<div id="contact">
+  <div class="container">
+    <h1 class="heading">Contacts</h1>
+    <div class="contact-form">	  
+      <p>
+        <i class='bx bxl-whatsapp' style="color: dimgray; font-size: 25px;"></i> +27 (0) 79-777-0542<br>
+        <i class='bx bxs-envelope' style="color: dimgray; font-size: 25px;"></i> manyamatom@gmail.com<br>
+        <i class='bx bx-current-location' style="color: dimgray; font-size: 25px;"></i> Gauteng, Boksburg<br>
+      </p>
+      
+      <form action="https://formspree.io/f/mvzygryw" method="POST" target="_blank">
+        <input type="text" name="name" placeholder="Enter Your Name" required>
+        <input type="email" name="email" placeholder="Enter Your Email" required>
+        <textarea name="message" placeholder="Write Message" required></textarea>
+        <button type="submit" class="btn">Send</button>
+      </form>   
+    </div>
+  </div>
+  <div class="contact-img">
+      <img src="Photo.jpg" alt="Photo">
   </div>
 </div>
 
 
 <footer>
-<br>
-    <p>2025 Copyright ©Code by Themba Manyama. <i>+ Individual Projects.</i></p>
-</br>
+    <p>2026 Copyright Â©Code by Themba Manyama. <i>+ Individual Projects.</i></p>
 <hr style="margin: 10px 0;">
 </footer>
 
@@ -877,11 +998,99 @@ th, td {
 <script>
         document.querySelector('.hamburger').addEventListener('click', function() {
             document.querySelector('.menu').classList.toggle('active');
+			
         });
+		
+// Show chatbot only if user is on Home section
+const openBtn = document.getElementById('open-chatbot');
+const chatbot = document.getElementById('chatbot');
+const closeBtn = document.getElementById('close-chatbot');
+const sendBtn = document.getElementById('chatbot-send');
+const inputField = document.getElementById('chatbot-input');
+const messagesDiv = document.getElementById('chatbot-messages');
+
+// Only show button if Home section is visible
+function isHomeVisible() {
+    const home = document.getElementById('home');
+    const rect = home.getBoundingClientRect();
+    return rect.top < window.innerHeight && rect.bottom > 0;
+}
+
+window.addEventListener('scroll', () => {
+    openBtn.style.display = isHomeVisible() ? 'block' : 'none';
+});
+
+// Open chatbot with animation
+openBtn.addEventListener('click', () => {
+    chatbot.classList.add('show');
+});
+
+// Close chatbot
+closeBtn.addEventListener('click', () => {
+    chatbot.classList.remove('show');
+});
+
+// Send message function
+function addMessage(sender, text) {
+    const message = document.createElement('div');
+    message.innerHTML = `<b>${sender}:</b> ${text}`;
+    message.style.margin = "5px 0";
+    messagesDiv.appendChild(message);
+    messagesDiv.scrollTop = messagesDiv.scrollHeight;
+}
+
+// Simple animated bot responses
+function botResponse(message) {
+    message = message.toLowerCase();
+    if(message.includes('hello') || message.includes('hi')) return '?? Hi there! I am Themba Manyama Chatbot Assistant. How can I help you today?';
+    if(message.includes('portfolio')) return '? You can explore my projects in the Projects menu!';
+    if(message.includes('skills')) return '?? I have skills in HTML, CSS, JS, PHP, MySQL, Python, and more.';
+    if(message.includes('contact')) return '?? You can find my contact info in the Contact section of this website.';
+    return "?? Sorry, I didn't understand that. Ask me about my portfolio, skills, or projects!";
+}
+
+sendBtn.addEventListener('click', () => {
+    const userMessage = inputField.value.trim();
+    if(userMessage === '') return;
+    addMessage('You', userMessage);
+    const reply = botResponse(userMessage);
+    setTimeout(() => addMessage('TM Assistant', reply), 500);
+    inputField.value = '';
+});
+
+inputField.addEventListener('keypress', (e) => {
+    if(e.key === 'Enter') sendBtn.click();
+});
+
+
+//Form
+const contactForm = document.querySelector("#contact form");
+
+contactForm.addEventListener("submit", function(e){
+    e.preventDefault();
+    
+    const formData = new FormData(this);
+    const action = this.action;
+    
+    fetch(action, {
+        method: "POST",
+        body: formData,
+        headers: { "Accept": "application/json" }
+    })
+    .then(response => {
+        if(response.ok){
+            alert("Thank you! Your message has been sent.");
+            contactForm.reset();
+        } else {
+            alert("Oops! Something went wrong.");
+        }
+    })
+    .catch(() => alert("Oops! There was a problem sending your message."));
+});
+</script>
     </script>
 	
 </body>
 
 </html>
-
 
